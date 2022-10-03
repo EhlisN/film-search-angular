@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <div>
+    <div class="button-container">
+      <button mat-button>Basic</button>
+      <button mat-raised-button>Basic</button>
+    </div>
+
+    <div class="input-container">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Favorite food</mat-label>
+        <input matInput placeholder="Ex. Pizza" value="Sushi" />
+      </mat-form-field>
+    </div>
+
+    <div class="select-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Favorite food</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{ food.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
