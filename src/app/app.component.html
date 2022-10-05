@@ -9,30 +9,37 @@
       <div class="input-container">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Title</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="hello" />
+          <input
+            [(ngModel)]="movieTitle"
+            matInput
+            placeholder="Title"
+            value="Enter title"
+          />
         </mat-form-field>
       </div>
 
       <div class="select-container">
         <mat-form-field appearance="fill">
           <mat-label>Type</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-              {{ food.viewValue }}
+          <mat-select [(ngModel)]="movieType">
+            <mat-option *ngFor="let type of types" [value]="type.value">
+              {{ type.viewValue }}
             </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
 
       <div class="button-container">
-        <button mat-raised-button color="primary">Search</button>
+        <button (click)="getMovies()" mat-raised-button color="primary">
+          Search
+        </button>
       </div>
     </div>
   </div>
   <div class="movie-container">
-    <app-movie-card></app-movie-card>
-    <app-movie-card></app-movie-card>
-    <app-movie-card></app-movie-card>
-    <app-movie-card></app-movie-card>
+    <app-movie-card
+      *ngFor="let movie of movies"
+      [movie]="movie"
+    ></app-movie-card>
   </div>
 </div>

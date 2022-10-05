@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IMovie } from '../model/movie.model';
+import { MoviePreview } from '../model/moviePreview.model';
+import { ResponseData } from '../model/omdb.model';
 
 const API_KEY = "6230c842";
 const API_URL = "http://www.omdbapi.com";
@@ -12,7 +15,10 @@ export class OmdbService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getMoviesByTitle(title: string): Observable<any> {
-    return this.httpClient.get<any>(`${API_URL}/?s=${title}&apikey=${API_KEY}`)
+  getMoviesByTitle(title: string): Observable<ResponseData<MoviePreview>> {
+    return this.httpClient.get<ResponseData<MoviePreview>>(`${API_URL}/?s=${title}&apikey=${API_KEY}`)
+  }
+  getMovieById(id: string): Observable<IMovie> {
+    return this.httpClient.get<IMovie>(`${API_URL}/?i=${id}&apikey=${API_KEY}`)
   }
 }

@@ -1,16 +1,24 @@
 <div class="movie-card-container">
   <div class="img-container">
-    <img
-      src="https://upload.wikimedia.org/wikipedia/ru/thumb/b/b6/X_%28film%2C_2022%29.jpg/640px-X_%28film%2C_2022%29.jpg"
-      alt="film"
-    />
+    <img src="{{ movie.Poster }}" alt="film" />
   </div>
   <div class="about-container">
-    <div class="type">movie</div>
-    <div class="name">Hello, my name is Doris</div>
-    <div class="year">2015</div>
+    <div class="type">{{ movie.Type }}</div>
+    <div class="name">{{ movie.Title }}</div>
+    <div class="year">{{ movie.Year }}</div>
     <div class="button-container">
-      <button mat-raised-button color="primary">Details</button>
+      <!-- <button (click)="getMovieById()" mat-raised-button color="primary">
+        Details
+      </button> -->
+      <button mat-button (click)="openDialog()">Details</button>
+    </div>
+    <div *ngIf="isShowDetails" class="movie-details">
+      <app-movie-details
+        [details]="details"
+        [isShowDetails]="isShowDetails"
+        (click)="isShowDetails = false"
+      >
+      </app-movie-details>
     </div>
   </div>
 </div>
