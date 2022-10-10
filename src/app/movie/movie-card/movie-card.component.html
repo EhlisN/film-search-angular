@@ -10,15 +10,15 @@
       <!-- <button (click)="getMovieById()" mat-raised-button color="primary">
         Details
       </button> -->
-      <button mat-button (click)="openDialog()">Details</button>
+      <button mat-button (click)="getMovieById()">Details</button>
     </div>
-    <div *ngIf="isShowDetails" class="movie-details">
+    <!-- <div *ngIf="isShowDetails" class="movie-details">
       <app-movie-details
         [details]="details"
         [isShowDetails]="isShowDetails"
         (click)="isShowDetails = false"
       >
       </app-movie-details>
-    </div>
+    </div> -->
   </div>
 </div>

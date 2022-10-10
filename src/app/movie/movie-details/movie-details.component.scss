@@ -1,19 +1,43 @@
+// .movie-details-container {
+//   position: absolute;
+//   text-align: center;
+//   background-color: rgba(90, 84, 84, 0.404);
+//   width: 100vw;
+//   height: 100vw;
+//   top: 0;
+//   left: 0;
+//   z-index: 10;
+//   padding-top: 50px;
+//   .details {
+//     width: 500px;
+//     background-color: rgb(253, 249, 249);
+//     margin: auto;
+//   }
+//   &.hide {
+//     display: none;
+//   }
+// }
+
 .movie-details-container {
-  position: absolute;
-  text-align: center;
-  background-color: rgba(90, 84, 84, 0.404);
-  width: 100vw;
-  height: 100vw;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  padding-top: 50px;
-  .details {
-    width: 500px;
-    background-color: rgb(253, 249, 249);
-    margin: auto;
+  h1 {
+    text-align: center;
+    font-weight: 700;
   }
-  &.hide {
-    display: none;
+  .mat-dialog-content {
+    overflow: visible;
+    margin-bottom: 20px;
+    div {
+      font-weight: 500;
+      font-size: 16px;
+      span {
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+    img {
+      width: 30%;
+      float: left;
+      margin-right: 2%;
+    }
   }
 }

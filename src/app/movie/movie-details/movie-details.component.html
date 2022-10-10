@@ -1,4 +1,4 @@
-<div class="movie-details-container">
+<!-- <div class="movie-details-container">
   <div class="details">
     <img src="{{ details.Poster }}" alt="{{ details.Title }}" />
     <h3>{{ details.Title }}</h3>
@@ -13,24 +13,44 @@
     <div>Year: {{ details.Year }}</div>
     <div>Ratings: {{ details.Ratings }}</div>
   </div>
-</div>
+</div> -->
 
-<h2 mat-dialog-title>Install Angular</h2>
-<mat-dialog-content class="mat-typography">
-  <img src="{{ details.Poster }}" alt="{{ details.Title }}" />
-  <h3>{{ details.Title }}</h3>
-  <div>Actors: {{ details.Actors }}</div>
-  <div>Country: {{ details.Country }}</div>
-  <div>Director: {{ details.Director }}</div>
-  <div>Genre: {{ details.Genre }}</div>
-  <div>Type: {{ details.Type }}</div>
-  <div>Website: {{ details.Website }}</div>
-  <div>Writer: {{ details.Writer }}</div>
-  <div>imdbRating: {{ details.imdbRating }}</div>
-  <div>Year: {{ details.Year }}</div>
-  <div>Ratings: {{ details.Ratings }}</div>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
-</mat-dialog-actions>
+<div class="movie-details-container">
+  <h1 mat-dialog-title>{{ data.Title }}</h1>
+  <div mat-dialog-content>
+    <img src="{{ data.Poster }}" alt="{{ data.Title }}" />
+    <div>
+      Actors: <span>{{ data.Actors }}</span>
+    </div>
+    <div>
+      Country: <span>{{ data.Country }}</span>
+    </div>
+    <div>
+      Director: <span>{{ data.Director }}</span>
+    </div>
+    <div>
+      Genre: <span>{{ data.Genre }}</span>
+    </div>
+    <div>
+      Type: <span>{{ data.Type }}</span>
+    </div>
+    <div>
+      Website: <span>{{ data.Website }}</span>
+    </div>
+    <div>
+      Writer: <span>{{ data.Writer }}</span>
+    </div>
+    <div>
+      imdbRating: <span>{{ data.imdbRating }}</span>
+    </div>
+    <div>
+      Year: <span>{{ data.Year }}</span>
+    </div>
+    <div>
+      Ratings: {{ data.Ratings[0].Source }}: {{ data.Ratings[0].Value }}
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+  </div>
+</div>
