@@ -19,9 +19,9 @@ export class OmdbService {
       `${API_URL}/?&apikey=${API_KEY}`
     );
   }
-  getMoviesByTitle(title: string): Observable<ResponseData<MoviePreview>> {
+  getMoviesByTitle(title: string, pageNumber: number): Observable<ResponseData<MoviePreview>> {
     return this.httpClient.get<ResponseData<MoviePreview>>(
-      `${API_URL}/?s=${title}&apikey=${API_KEY}`
+      `${API_URL}/?s=${title}&apikey=${API_KEY}&page=${pageNumber}`
     );
   }
   getMovieById(id: string): Observable<IMovie> {
@@ -34,10 +34,10 @@ export class OmdbService {
   }
   getMoviesByTitleAndType(
     title: string,
-    type: string
+    type: string, pageNumber: number
   ): Observable<ResponseData<MoviePreview>> {
     return this.httpClient.get<ResponseData<MoviePreview>>(
-      `${API_URL}/?s=${title}&type=${type}&apikey=${API_KEY}`
+      `${API_URL}/?s=${title}&type=${type}&apikey=${API_KEY}&page=${pageNumber}`
     );
   }
 }

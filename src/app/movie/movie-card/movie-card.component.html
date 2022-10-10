@@ -10,7 +10,9 @@
       <!-- <button (click)="getMovieById()" mat-raised-button color="primary">
         Details
       </button> -->
-      <button mat-button (click)="getMovieById()">Details</button>
+      <button mat-button (click)="getMovieById()" [disabled]="isShowDetails">
+        Details
+      </button>
     </div>
     <!-- <div *ngIf="isShowDetails" class="movie-details">
       <app-movie-details

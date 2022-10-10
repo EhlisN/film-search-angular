@@ -13,18 +13,17 @@ import { MovieDetailsComponent } from '../movie-details/movie-details.component'
 export class MovieCardComponent implements OnInit {
   @Input() movie!: MoviePreview;
   // details!: IMovie;
-  // isShowDetails: boolean = false;
+  isShowDetails: boolean = false;
 
   constructor(private omdbService: OmdbService, public dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
   getMovieById() {
+    this.isShowDetails = true;
     this.omdbService.getMovieById(this.movie.imdbID).subscribe((data) => {
-      // this.details = data;
-      // this.isShowDetails = true;
-      // console.log(data);
-      this.dialog.open(MovieDetailsComponent, { data });
+      this.dialog.open(MovieDetailsComponent, { disableClose: true, data });
+      this.isShowDetails = false;
     });
   }
 }

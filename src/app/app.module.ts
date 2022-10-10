@@ -15,6 +15,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { MovieCardComponent } from './movie/movie-card/movie-card.component';
 import { MovieDetailsComponent } from './movie/movie-details/movie-details.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatSelectModule,
     HttpClientModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,9 +16,9 @@
 </div> -->
 
 <div class="movie-details-container">
-  <h1 mat-dialog-title>{{ data.Title }}</h1>
+  <img src="{{ data.Poster }}" alt="{{ data.Title }}" />
   <div mat-dialog-content>
-    <img src="{{ data.Poster }}" alt="{{ data.Title }}" />
+    <h1 mat-dialog-title>{{ data.Title }}</h1>
     <div>
       Actors: <span>{{ data.Actors }}</span>
     </div>
@@ -47,10 +47,19 @@
       Year: <span>{{ data.Year }}</span>
     </div>
     <div>
-      Ratings: {{ data.Ratings[0].Source }}: {{ data.Ratings[0].Value }}
+      Rated: <span>{{ data.Rated }}</span>
     </div>
-  </div>
-  <div mat-dialog-actions>
-    <button mat-button mat-dialog-close>Close</button>
+    <div>
+      Released: <span>{{ data.Released }}</span>
+    </div>
+    <div>
+      Runtime: <span>{{ data.Runtime }}</span>
+    </div>
+    <div>
+      {{ data.Ratings[0].Source }}: <span>{{ data.Ratings[0].Value }}</span>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close>Close</button>
+    </div>
   </div>
 </div>

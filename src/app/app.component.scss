@@ -35,4 +35,10 @@
     display: flex;
     flex-wrap: wrap;
   }
+  .mat-paginator-outer-container {
+    margin-top: 20px;
+    .mat-paginator-container {
+      justify-content: center;
+    }
+  }
 }

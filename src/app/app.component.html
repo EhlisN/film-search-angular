@@ -30,16 +30,26 @@
       </div>
 
       <div class="button-container">
-        <button (click)="getMovies()" mat-raised-button color="primary">
+        <button (click)="getMovies(true)" mat-raised-button color="primary">
           Search
         </button>
       </div>
     </div>
   </div>
-  <div class="movie-container">
-    <app-movie-card
-      *ngFor="let movie of movies"
-      [movie]="movie"
-    ></app-movie-card>
+  <div *ngIf="movies.length">
+    <div class="movie-container">
+      <app-movie-card
+        *ngFor="let movie of movies"
+        [movie]="movie"
+      ></app-movie-card>
+    </div>
+    <mat-paginator
+      [length]="totalResults"
+      [pageSize]="10"
+      [pageIndex]="pageIndex - 1"
+      (page)="handlePageEvent($event)"
+      aria-label="Select page"
+    >
+    </mat-paginator>
   </div>
 </div>
