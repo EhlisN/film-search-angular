@@ -14,6 +14,7 @@ export class MovieCardComponent implements OnInit {
   @Input() movie!: MoviePreview;
   // details!: IMovie;
   isShowDetails: boolean = false;
+  // moviePoster: string = this.movie.Poster !== 'N/A' ? this.movie.Poster : 'https://freedesignfile.com/upload/2014/07/Movie-time-design-elements-vector-backgrounds-01.jpg';
 
   constructor(private omdbService: OmdbService, public dialog: MatDialog) {}
 

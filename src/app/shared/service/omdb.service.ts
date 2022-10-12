@@ -14,12 +14,15 @@ const API_URL = 'http://www.omdbapi.com';
 export class OmdbService {
   constructor(private httpClient: HttpClient) {}
 
-  getAllMovies(): Observable<ResponseData<MoviePreview>> {
-    return this.httpClient.get<ResponseData<MoviePreview>>(
-      `${API_URL}/?&apikey=${API_KEY}`
-    );
-  }
-  getMoviesByTitle(title: string, pageNumber: number): Observable<ResponseData<MoviePreview>> {
+  // getAllMovies(): Observable<ResponseData<MoviePreview>> {
+  //   return this.httpClient.get<ResponseData<MoviePreview>>(
+  //     `${API_URL}/?&apikey=${API_KEY}`
+  //   );
+  // }
+  getMoviesByTitle(
+    title: string,
+    pageNumber: number
+  ): Observable<ResponseData<MoviePreview>> {
     return this.httpClient.get<ResponseData<MoviePreview>>(
       `${API_URL}/?s=${title}&apikey=${API_KEY}&page=${pageNumber}`
     );
@@ -27,14 +30,15 @@ export class OmdbService {
   getMovieById(id: string): Observable<IMovie> {
     return this.httpClient.get<IMovie>(`${API_URL}/?i=${id}&apikey=${API_KEY}`);
   }
-  getMoviesByType(type: string): Observable<ResponseData<MoviePreview>> {
-    return this.httpClient.get<ResponseData<MoviePreview>>(
-      `${API_URL}/?type=${type}&apikey=${API_KEY}`
-    );
-  }
+  // getMoviesByType(type: string): Observable<ResponseData<MoviePreview>> {
+  //   return this.httpClient.get<ResponseData<MoviePreview>>(
+  //     `${API_URL}/?type=${type}&apikey=${API_KEY}`
+  //   );
+  // }
   getMoviesByTitleAndType(
     title: string,
-    type: string, pageNumber: number
+    type: string,
+    pageNumber: number
   ): Observable<ResponseData<MoviePreview>> {
     return this.httpClient.get<ResponseData<MoviePreview>>(
       `${API_URL}/?s=${title}&type=${type}&apikey=${API_KEY}&page=${pageNumber}`

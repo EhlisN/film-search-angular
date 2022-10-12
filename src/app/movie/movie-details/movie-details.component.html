@@ -1,22 +1,5 @@
-<!-- <div class="movie-details-container">
-  <div class="details">
-    <img src="{{ details.Poster }}" alt="{{ details.Title }}" />
-    <h3>{{ details.Title }}</h3>
-    <div>Actors: {{ details.Actors }}</div>
-    <div>Country: {{ details.Country }}</div>
-    <div>Director: {{ details.Director }}</div>
-    <div>Genre: {{ details.Genre }}</div>
-    <div>Type: {{ details.Type }}</div>
-    <div>Website: {{ details.Website }}</div>
-    <div>Writer: {{ details.Writer }}</div>
-    <div>imdbRating: {{ details.imdbRating }}</div>
-    <div>Year: {{ details.Year }}</div>
-    <div>Ratings: {{ details.Ratings }}</div>
-  </div>
-</div> -->
-
 <div class="movie-details-container">
-  <img src="{{ data.Poster }}" alt="{{ data.Title }}" />
+  <img class="big-img" src="{{ data.Poster }}" alt="{{ data.Title }}" />
   <div mat-dialog-content>
     <h1 mat-dialog-title>{{ data.Title }}</h1>
     <div>
@@ -59,7 +42,7 @@
       {{ data.Ratings[0].Source }}: <span>{{ data.Ratings[0].Value }}</span>
     </div>
     <div mat-dialog-actions>
-      <button mat-button mat-dialog-close>Close</button>
+      <button mat-raised-button color="warn" mat-dialog-close>Close</button>
     </div>
   </div>
 </div>

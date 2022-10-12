@@ -3,11 +3,12 @@
 <!-- http://www.omdbapi.com/?i=tt3896198&apikey=6230c842 -->
 
 <div class="main-container">
+  <h1>Cinema</h1>
   <div class="search-wrapper">
-    <h3>Search:</h3>
+    <!-- <h3>Search:</h3> -->
     <div class="search-container">
       <div class="input-container">
-        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Title</mat-label>
           <input
             [(ngModel)]="movieTitle"
@@ -19,7 +20,7 @@
       </div>
 
       <div class="select-container">
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="outline">
           <mat-label>Type</mat-label>
           <mat-select [(ngModel)]="movieType">
             <mat-option *ngFor="let type of types" [value]="type.value">
@@ -30,12 +31,18 @@
       </div>
 
       <div class="button-container">
-        <button (click)="getMovies(true)" mat-raised-button color="primary">
+        <button
+          [disabled]="!movieTitle.length"
+          (click)="getMovies(true)"
+          mat-raised-button
+          color="warn"
+        >
           Search
         </button>
       </div>
     </div>
   </div>
+  <div class="not-found">{{ notFound }}</div>
   <div *ngIf="movies.length">
     <div class="movie-container">
       <app-movie-card
