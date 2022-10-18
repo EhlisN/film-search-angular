@@ -1,4 +1,6 @@
-# FilmSearch [![Build Status](https://ehlisn.github.io/film-search-angular/)](https://ehlisn.github.io/film-search-angular/)
+# FilmSearch
+
+## Live version [https://ehlisn.github.io/film-search-angular/](https://ehlisn.github.io/film-search-angular/)
 
 Sample SPA application written in Angular which communicates with [OMDb API](http://www.omdbapi.com/).
 
