@@ -1,3 +1,23 @@
+# FilmSearch [![Build Status](https://ehlisn.github.io/film-search-angular/)](https://ehlisn.github.io/film-search-angular/)
+
+Sample SPA application written in Angular which communicates with [OMDb API](http://www.omdbapi.com/).
+
+## Used technologies
+
+- Angular material
+
+- Reactive forms
+
+- Animate.css
+
+- MatPaginator
+
+## Overview
+
+Application queries the OMDb API in order to retrieve information about requested movies. Pagination was implemented in order to display bigger search results. Application does not fully support responsive design but most of the components are built upon flex layouts and CSS grids so to make it fully usable on smaller devices.
+
+<!-- # Live version [https://ehlisn.github.io/film-search-angular/](https://ehlisn.github.io/film-search-angular/) -->
+
 # FilmSearchAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
