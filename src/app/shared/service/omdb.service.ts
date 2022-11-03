@@ -6,7 +6,7 @@ import { MoviePreview } from '../model/moviePreview.model';
 import { ResponseData } from '../model/omdb.model';
 
 const API_KEY = '6230c842';
-const API_URL = 'http://www.omdbapi.com';
+const API_URL = 'https://www.omdbapi.com';
 
 @Injectable({
   providedIn: 'root',
